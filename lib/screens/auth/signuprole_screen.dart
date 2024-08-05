@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ninetytwoagents/screens/signup_screen.dart';
+import 'package:ninetytwoagents/screens/auth/signup_screen.dart';
+
 
 
 class SignUpRolePage extends StatefulWidget {

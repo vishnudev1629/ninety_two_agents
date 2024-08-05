@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ninetytwoagents/constant.dart';
-import 'package:ninetytwoagents/screens/signuprole_screen.dart';
+import 'package:ninetytwoagents/screens/auth/signuprole_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
