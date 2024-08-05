@@ -14,6 +14,11 @@ class PostdetailsScreen extends StatefulWidget {
 
 class __PostdetailsScreenState extends State<PostdetailsScreen> {
 
+ bool _firsttimebuyer = false;
+  bool _hometosell = false;
+  bool _needhelp = false;
+  bool _foreclosure = false;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -31,8 +36,8 @@ class __PostdetailsScreenState extends State<PostdetailsScreen> {
         body: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
-
               CustomTextFormField(
               textController: _posttitleController, 
               labelText: 'Post Title'),
@@ -131,11 +136,23 @@ class __PostdetailsScreenState extends State<PostdetailsScreen> {
                CustomTextFormField(
               textController: _posttitleController, 
               labelText: 'Neighbourhood'),
+              SizedBox(
+                height: 20,
+              ),
+
+              Container(
+                width: MediaQuery.of(context).size.width,
+                height: 6,
+                color: Color(0xffF4F4F4),
+              ),
+              SizedBox(
+                height: 30,
+              ),
 
               Text('Zip Codes where do you want to focus',
               textAlign: TextAlign.start,
               style: TextStyle(
-                fontSize: 15
+                fontSize: 20
               ),),
 
                CustomTextFormField(
@@ -157,6 +174,17 @@ class __PostdetailsScreenState extends State<PostdetailsScreen> {
                CustomTextFormField(
               textController: _posttitleController, 
               labelText: 'Zip Code'),
+              SizedBox(
+                height: 25,
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                height: 6,
+                color: Color(0xffF4F4F4),
+              ),
+              SizedBox(
+                height: 25,
+              ),
 
                CustomTextFormField(
               textController: _posttitleController, 
@@ -169,6 +197,122 @@ class __PostdetailsScreenState extends State<PostdetailsScreen> {
                CustomTextFormField(
               textController: _posttitleController, 
               labelText: 'Property Type'),
+
+               Text(
+              'Are you a first time home buyer?',
+              style: TextStyle(fontSize: 18),
+            ),
+            Row(
+              children: [
+                Radio(
+                  value: true,
+                  groupValue: _firsttimebuyer,
+                  onChanged: (bool? value) {
+                    setState(() {
+                      _firsttimebuyer = value!;
+                    });
+                  },
+                ),
+                const Text('Yes'),
+                Radio(
+                  value: false,
+                  groupValue: _firsttimebuyer,
+                  onChanged: (bool? value) {
+                    setState(() {
+                      _firsttimebuyer = value!;
+                    });
+                  },
+                ),
+                const Text('No'),
+              ],
+            ),
+
+              Text(
+              'Do you have a home to sell?',
+              style: TextStyle(fontSize: 18),
+            ),
+            Row(
+              children: [
+                Radio(
+                  value: true,
+                  groupValue: _hometosell,
+                  onChanged: (bool? value) {
+                    setState(() {
+                      _hometosell = value!;
+                    });
+                  },
+                ),
+                const Text('Yes'),
+                Radio(
+                  value: false,
+                  groupValue: _hometosell,
+                  onChanged: (bool? value) {
+                    setState(() {
+                      _hometosell = value!;
+                    });
+                  },
+                ),
+                const Text('No'),
+              ],
+            ),
+            const SizedBox(height: 16),
+             Text(
+              'If so do you need help selling?',
+              style: TextStyle(fontSize: 18),
+            ),
+            Row(
+              children: [
+                Radio(
+                  value: true,
+                  groupValue: _needhelp,
+                  onChanged: (bool? value) {
+                    setState(() {
+                      _needhelp = value!;
+                    });
+                  },
+                ),
+                const Text('Yes'),
+                Radio(
+                  value: false,
+                  groupValue: _needhelp,
+                  onChanged: (bool? value) {
+                    setState(() {
+                      _needhelp = value!;
+                    });
+                  },
+                ),
+                const Text('No'),
+              ],
+            ),
+            const SizedBox(height: 16),
+             Text(
+              'Are you interested in buying a foreclosure?',
+              style: TextStyle(fontSize: 18),
+            ),
+            Row(
+              children: [
+                Radio(
+                  value: true,
+                  groupValue: _foreclosure,
+                  onChanged: (bool? value) {
+                    setState(() {
+                      _foreclosure = value!;
+                    });
+                  },
+                ),
+                const Text('Yes'),
+                Radio(
+                  value: false,
+                  groupValue: _foreclosure,
+                  onChanged: (bool? value) {
+                    setState(() {
+                      _foreclosure = value!;
+                    });
+                  },
+                ),
+                const Text('No'),
+              ],
+            ),
 
                CustomTextFormField(
               textController: _posttitleController, 
